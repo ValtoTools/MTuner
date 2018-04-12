@@ -53,7 +53,7 @@ After cloning the repository and dependencies, here are the steps to build MTune
 
 	$ cd MTuner/genie
 	$ genie --gcc=mingw-gcc gmake
-	$ cd ../../.build/windows/mingw-gcc/projects/MTuner
+	$ cd ../../.build/windows/mingw-gcc/MTuner/projects/
 	$ make
 MINGW environment variable must be set and point to the MinGW installation directory.  
 Tested with [TDM64 MinGW](http://tdm-gcc.tdragon.net/download) using [OpenMP package](http://sourceforge.net/projects/tdm-gcc/files/TDM-GCC%205%20series/5.1.0-tdm64-1/gcc-5.1.0-tdm64-1-openmp.zip/download)
@@ -64,20 +64,24 @@ Tested with [TDM64 MinGW](http://tdm-gcc.tdragon.net/download) using [OpenMP pac
 	> genie vs2015
 Solution will be located here: *{Clone root}/.build/windows/vs2015/projects/MTuner/MTuner.sln*
 
+NB: building Qt based projects with [build](https://github.com/milostosic/build) requires additional dependencies:
+
+	Lua
+	Lua lfs module
+
+Environment variables are used to locate Qt installation, example:
+
+	set QTDIR_VS2015_x86=C:\<some_path>\Qt\5.10.0\msvc2017_64 *
+	set QTDIR_VS2015_x64=C:\<some_path>\Qt\5.10.0\msvc2017_64
+
+Note that Qt deprecated 32bit builds, hence both variables point to same location.
+
+Latest release made with: Visual Studio 2017 Community edition, Qt 5.10 and Lua 5.1.4
+
 Documentation
 ======
 
 MTuner documentation can be found [here](https://milostosic.github.io/MTuner/).  
-
-Support development
-======
-
-**MTuner** is free and will remain so but there's plenty more features and polish to do.  
-Consider donating to support the ongoing development and maintenance of **MTuner**
-
-[<img src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/donate.en.png" width=228 height=44>](https://www.paypal.me/MTuner)
-
-For private support and similar requests, please contact the author - see below.
 
 Author
 ======
